@@ -12,19 +12,19 @@ provider "tfe" {}
 
 # Create an "admin" team
 resource "tfe_team" "admin" {
-  organization = "test-org"
+  organization = "my-org"
   name         = "admin-team"
 }
 
 # Create an "dev" team
 resource "tfe_team" "dev" {
-  organization = "test-org"
+  organization = "my-org"
   name         = "dev-team"
 }
 
 output "tfe" {
   value = {
-    organization_name = "test-org"
+    organization_name = "my-org"
     teams = {
       admin = tfe_team.admin.id
       dev   = tfe_team.dev.id
