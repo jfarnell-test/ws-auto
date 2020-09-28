@@ -3,7 +3,7 @@
 provider "tfe" {}
 
 # Create a new TFE Organization for testing
-resource "random_pet" "org_name" {}
+# resource "random_pet" "org_name" {}
 
 /* resource "tfe_organization" "org" {
   name  = random_pet.org_name.id
