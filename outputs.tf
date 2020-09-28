@@ -1,6 +1,6 @@
 output "workspace" {
-  description = "Workspace A Information."
-  value       = module.workspace_a
+  description = "Workspace Information."
+  value       = module.workspace
 }
 
 /* output "workspace_b" {
