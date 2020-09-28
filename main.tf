@@ -22,7 +22,7 @@ module "workspace" {
   ]
 }
 
-module "workspace" {
+/* module "workspace" {
   source = "./modules/workspaces"
 
   organization_name = var.organization_name
@@ -33,5 +33,5 @@ module "workspace" {
       access = "plan"
     }
   ]
-}
+} */
 
