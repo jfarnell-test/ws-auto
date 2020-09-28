@@ -1,9 +1,9 @@
-output "workspace_a" {
+output "workspace" {
   description = "Workspace A Information."
   value       = module.workspace_a
 }
 
-output "workspace_b" {
+/* output "workspace_b" {
   description = "Workspace B Information."
   value       = module.workspace_b
-}
+} */
