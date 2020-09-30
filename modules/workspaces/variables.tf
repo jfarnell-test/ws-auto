@@ -16,3 +16,9 @@ variable "teams_access" {
     access = string
   }))
 }
+
+variable "team_names" {
+    description = ""
+    type = list(string)
+    default = []
+}
