@@ -29,13 +29,6 @@ resource "tfe_team_access" "access" {
   access       = each.value.team_access
 }
 
-# Team creation
-resource "tfe_team" "team" {
-  for_each = toset(var.team_names)
-  organization = "my-org"
-  name = each.key
-}
-
 /* output "tfe" {
   value = {
     organization_name = "my-org"

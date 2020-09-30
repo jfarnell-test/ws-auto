@@ -3,21 +3,29 @@
 
 provider "tfe" {}
 
+
+# Team creation
+resource "tfe_team" "team" {
+  for_each     = toset(var.team_names)
+  organization = "my-org"
+  name         = each.key
+}
+
 #new module call for each workspace set
 
 module "workspace" {
-  source = "./modules/workspaces"
-
+  source            = "./modules/workspaces"
+  depends_on        = [tfe_team.team]
   organization_name = var.organization_name
   names             = ["workspace_a_tf12-1", "workspace_a_tf12-2", "workspace_a_tf12-3"]
-  team_names = ["admin", "dev"]
+  team_names        = ["admin", "dev"]
   teams_access = [
     {
-      id     = var.team_admin
+      id     = tfe_team.id[0] #var.team_admin
       access = "admin"
     },
     {
-      id     = var.team_dev
+      id     = tfe_team.id[1] #var.team_dev
       access = "plan"
     }
   ]
