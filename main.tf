@@ -21,11 +21,11 @@ module "workspace" {
   team_names        = ["admin", "dev"]
   teams_access = [
     {
-      id     = tfe_team.id[0] #var.team_admin
+      id     = tfe_team[0].id #var.team_admin
       access = "admin"
     },
     {
-      id     = tfe_team.id[1] #var.team_dev
+      id     = tfe_team[1].id #var.team_dev
       access = "plan"
     }
   ]
