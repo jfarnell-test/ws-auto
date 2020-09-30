@@ -48,6 +48,3 @@ resource "tfe_team" "team" {
   }
 } */
 
-output "teams" {
-  value = tfe_team.team[*]
-}
